@@ -12,7 +12,7 @@ resource "azurerm_network_interface" "vm_nic" {
 
   ip_configuration {
     name                          = "internal"
-    subnet_id                     = module.vnet.vnet_subnets[local.aks_subnet_id]
+    subnet_id                     = module.vnet.vnet_subnets[local.subnet_id_aks]
     private_ip_address_allocation = "Dynamic"
   }
 }
@@ -34,6 +34,10 @@ resource "azurerm_linux_virtual_machine" "admin" {
     name                 = "${local.admin_vm_name}data01"
     caching              = "ReadWrite"
     storage_account_type = "Standard_LRS"
+  }
+
+  identity {
+    type = "SystemAssigned"
   }
 
   source_image_reference {

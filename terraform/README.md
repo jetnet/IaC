@@ -24,7 +24,7 @@ storage_account_name = "clna2mktdev100"
 **NOTE**: `backend-*.conf` files should be ignored by Git.
 
 ## Manual deployment
-This section describes how to create resources and deploy the Data Marktet places application using command line tools.
+This section describes how to create resources and deploy the Market application using command line tools.
 
 Environemnt specific values have to be defined in a values file, e.g. `values-cln-dev.tfvars`:
 ```
@@ -86,3 +86,24 @@ az keyvault certificate import --vault-name KEY-VAULT-NAME -n market -f "/PATH/T
 
 ## Second stage deployment
 
+Run Terraform apply again:
+```bash
+terraform apply --var-file=values-cln-dev.tfvars --auto-approve
+```
+
+## AKS management
+
+### Browser
+
+### AZ tunnel
+
+### AZ & Kubectl setup
+
+```bash
+az login --use-device-code # Use browser to authenticate
+az account set --subscription CLN-EMEA-App-Market-NonProd
+az configure -d group=RG-CLN-EMEA-App-Market-Dev
+az aks get-credentials --name aks-dmp-dev-westeurope101 
+
+kubectl get nodes -A # Use browser to authenticate
+```

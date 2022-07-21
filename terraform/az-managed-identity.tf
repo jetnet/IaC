@@ -36,7 +36,7 @@ resource "azurerm_role_assignment" "managed-identity-operator-role" {
 
 resource "azurerm_role_assignment" "aks-subnet-contributer" {
   role_definition_name             = "Network Contributor"
-  scope                            = module.vnet.vnet_subnets[local.aks_subnet_id]
+  scope                            = module.vnet.vnet_subnets[local.subnet_id_aks]
   principal_id                     = azurerm_user_assigned_identity.aks_identity.principal_id
   skip_service_principal_aad_check = true
 }

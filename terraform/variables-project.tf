@@ -21,13 +21,13 @@ variable "global_index" {
 
 variable "project_name" {
   type        = string
-  default     = "market"
+  default     = "marketplace"
   description = "Project name, used in some resource names to make them unique in Azure cloud infrastructure"
 }
 
 variable "project_name_short" {
   type        = string
-  default     = "mkt"
+  default     = "dmp"
   description = "A short project name, used in some resource names to make them unique in Azure cloud infrastructure. Some resources have limitation on the length of their names."
 }
 
@@ -60,7 +60,7 @@ variable "aad_group_developers" {
 
 variable "admin_user" {
   type        = string
-  default     = "adm"
+  default     = "dmpadm"
   description = "Admin user name for SSH connection"
 }
 
@@ -68,4 +68,40 @@ variable "kubernetes_version" {
   type        = string
   default     = "1.22.6"
   description = "Kubernetes version"
+}
+
+variable "ui_ip_address" {
+  type        = string
+  default     = "10.0.225.23"
+  description = "UI application private external IP address in Kubernetes cluster"
+}
+
+variable "ui_port" {
+  type        = string
+  default     = "4200"
+  description = "UI application listen port in Kubernetes cluster"
+}
+
+variable "ui_protocol" {
+  type        = string
+  default     = "Http"
+  description = "UI application protocol in Kubernetes cluster"
+}
+
+variable "os_db_ip_address" {
+  type        = string
+  default     = "10.0.225.23"
+  description = "UI application private external IP address in Kubernetes cluster"
+}
+
+variable "os_db_port" {
+  type        = string
+  default     = "4200"
+  description = "OpenSearch Dashboard listen port in Kubernetes cluster"
+}
+
+variable "os_db_protocol" {
+  type        = string
+  default     = "Http"
+  description = "OpenSearch Dashboard protocol in Kubernetes cluster"
 }

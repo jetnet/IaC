@@ -18,9 +18,9 @@ terraform {
   }
 
   backend "azurerm" {
-    # resource_group_name  = "" # env specific, defined in backend-LABLE-ENV.conf
-    # storage_account_name = "" # env specific, defined in backend-LABLE-ENV.conf
-    container_name = "tfstate"  # the container must be created manually
+    # resource_group_name  = "" # env specific, defined in tf-backend-ENV.conf
+    # storage_account_name = "" # env specific, defined in tf-backend-ENV.conf
+    container_name = "tfstate" # the container must be created manually
     key            = "terraform.tfstate"
   }
 }

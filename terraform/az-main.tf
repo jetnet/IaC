@@ -39,3 +39,9 @@ resource "tls_private_key" "admin_ssh_key" {
   algorithm = "RSA"
   rsa_bits  = 4096
 }
+
+###############################################################################
+# Helpers
+resource "time_sleep" "wait_60_seconds" {
+  create_duration = "60s"
+}

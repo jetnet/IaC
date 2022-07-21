@@ -1,13 +1,5 @@
 ###############################################################################
 # AKS variables
-locals {
-  aks_name               = "aks-${var.project_name_short}-${var.env}-${var.location}${var.global_index}"
-  aks_net_dns_service_ip = "10.2.0.10"
-  aks_net_service_cidr   = "10.2.0.0/24"
-  aks_net_outbound_type  = "loadBalancer"
-  aks_dns_name_prefix    = "${var.project_name_short}-host"
-  aks_pool_system_name   = "system"
-}
 
 ###
 # System pool requirements: https://docs.microsoft.com/en-us/azure/aks/use-system-pools?tabs=azure-cli#system-and-user-node-pools
