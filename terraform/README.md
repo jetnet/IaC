@@ -103,7 +103,7 @@ terraform apply --var-file=values-cln-dev.tfvars --auto-approve
 az login --use-device-code # Use browser to authenticate
 az account set --subscription CLN-EMEA-App-Market-NonProd
 az configure -d group=RG-CLN-EMEA-App-Market-Dev
-az aks get-credentials --name aks-dmp-dev-westeurope101 
+az aks get-credentials --name aks-mkt-dev-westeurope101 
 
 kubectl get nodes -A # Use browser to authenticate
 ```

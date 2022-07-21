@@ -27,7 +27,7 @@ variable "project_name" {
 
 variable "project_name_short" {
   type        = string
-  default     = "dmp"
+  default     = "mkt"
   description = "A short project name, used in some resource names to make them unique in Azure cloud infrastructure. Some resources have limitation on the length of their names."
 }
 
@@ -60,7 +60,7 @@ variable "aad_group_developers" {
 
 variable "admin_user" {
   type        = string
-  default     = "dmpadm"
+  default     = "mktadm"
   description = "Admin user name for SSH connection"
 }
 
