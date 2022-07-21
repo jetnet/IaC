@@ -148,7 +148,7 @@ data "azurerm_key_vault_certificate" "frontend_cert" {
         az keyvault certificate import --vault-name "${azurerm_key_vault.kv.name}" -n "${local.kv_cert_name_frontend}" -f "/path/to/${var.project_name}-${var.env}.pfx" -o none
 
         Make sure, the ETL license is uploaded as well, e.g.:
-        az keyvault secret set "${azurerm_key_vault.kv.name}" -n  "${local.kv_secret_name_etl_license}" -f "/path/to/${local.kv_secret_name_etl_license}.lic" -o none
+        az keyvault secret set --vault-name "${azurerm_key_vault.kv.name}" -n  "${local.kv_secret_name_etl_license}" -f "/path/to/${local.kv_secret_name_etl_license}.lic" -o none
 
       EOM
     }
